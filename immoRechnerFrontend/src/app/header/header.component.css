@@ -1,0 +1,16 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+h1{
+    font-size: 5vh;
+    cursor: default;
+}
+
+button{
+    cursor: pointer;
+}
