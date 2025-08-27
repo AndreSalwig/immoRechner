@@ -14,22 +14,22 @@ export class BasicFormComponent {
   nebenkostenU: number = 200;
   nebenkostenNU: number = 150;
   kaltmiete: number = 400;
-  mietrendite: number = this.kaltmiete*12*100/this.kaufpreis;
-  ueberschuss: number = this.kaltmiete-this.kaufpreis/100*5/12-this.nebenkostenNU
+  mietrendite: number = Math.round((this.kaltmiete*12*100/this.kaufpreis)*100)/100;
+  ueberschuss: number = Math.round((this.kaltmiete-this.kaufpreis/100*5/12-this.nebenkostenNU)*100)/100;
   empfehlung: String = "Diese Immobilie ist für diesen Preis nicht zu Empfehlen";
 
 
   onSubmit() {
-    this.mietrendite = this.kaltmiete*12*100/this.kaufpreis;
-    this.ueberschuss = this.kaltmiete-this.kaufpreis/100*5/12-this.nebenkostenNU;
-    if(this.mietrendite >= 6 || this.ueberschuss >= 0){
-      this.empfehlung = "Ein genauer Blick lohnt sich"
-    }
-    else if(this.mietrendite >= 6 && this.ueberschuss >= 0){
+    this.mietrendite = Math.round((this.kaltmiete*12*100/this.kaufpreis)*100)/100;
+    this.ueberschuss = Math.round((this.kaltmiete-this.kaufpreis/100*5/12-this.nebenkostenNU)*100)/100;
+    if(this.mietrendite >= 6 && this.ueberschuss >= 0){
       this.empfehlung = "Diese Immobilie sollte sich auf jeden Fall genauer angeschaut werden."
-    }
-    else{
-      this.empfehlung = "Diese Immobilie ist für diesen Preis nicht zu Empfehlen"
+    } 
+    else if(this.mietrendite >= 6 || this.ueberschuss >= 0){
+      this.empfehlung = "Ein genauer Blick lohnt sich"
+    } 
+    else {
+      this.empfehlung = "Diese Immobilie ist für diesen Preis nicht zu empfehlen"
     }
     
   }
