@@ -1,10 +1,27 @@
+.formContainer{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: start;
+    justify-content: center;
+    padding: 2vw;
+}
+
+h2{
+margin-left: 2vw;
+background-color: #f9f9f9aa;
+display: block;
+width: max-content;
+padding: 1vw;
+border-radius: 2rem;
+}
+
 .immo-form {
-    max-width: 400px;
-    margin: 20px auto;
+    width: 500px;
+    margin-right: 2vw;
     padding: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 12px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9aa;
 }
 
 .form-group {
