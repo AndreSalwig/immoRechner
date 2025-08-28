@@ -1,0 +1,32 @@
+<div class="formContainer">
+    <form (ngSubmit)="onSubmit()" class="immo-form">
+        <div class="form-group">
+            <label for="kaufpreis">Kaufpreis (€)</label>
+            <input type="number" [(ngModel)]="kaufpreis" id="kaufpreis" name="kaufpreis" required>
+        </div>
+
+        <div class="form-group">
+            <label for="wohnflaeche">Wohnfläche (m²)</label>
+            <input type="number" [(ngModel)]="wohnflaeche" id="wohnflaeche" name="wohnflaeche" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nebenkostenU">Nebenkosten umlagefähig (€)</label>
+            <input type="number" [(ngModel)]="nebenkostenU" id="nebenkostenU" name="nebenkostenU">
+        </div>
+
+        <div class="form-group">
+            <label for="nebenkostenNU">Nebenkosten nicht umlagefähig (€)</label>
+            <input type="number" [(ngModel)]="nebenkostenNU" id="nebenkostenNU" name="nebenkostenNU">
+        </div>
+
+        <div class="form-group">
+            <label for="kaltmiete">Ist-Kaltmiete (€)</label>
+            <input type="number" [(ngModel)]="kaltmiete" id="kaltmiete" name="kaltmiete">
+        </div>
+
+        <button type="submit">Berechnen</button>
+    </form>
+
+    <h2>Aus den oberen Daten ergibt sich folgende Bewertung: <br> Miterendite: {{mietrendite}}% <br> Überschuss: {{ueberschuss}}€ pro Monat <br> {{empfehlung}} </h2>
+</div>

@@ -1,0 +1,11 @@
+h1{
+    background-color: #f9f9f9aa;
+    display: inline-block;
+    padding-bottom: 2vh;
+    padding: 1vw;
+    border-radius: 2rem;
+}
+
+.mittig{
+    text-align: center;
+}

@@ -1,0 +1,57 @@
+.formContainer{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: start;
+    justify-content: center;
+    padding: 2vw;
+}
+
+h2{
+margin-left: 2vw;
+background-color: #f9f9f9aa;
+display: block;
+width: max-content;
+padding: 1vw;
+border-radius: 2rem;
+}
+
+.immo-form {
+    width: 500px;
+    margin-right: 2vw;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #f9f9f9aa;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 0.5rem;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #007acc;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f99;
+}
