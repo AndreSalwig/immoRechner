@@ -52,6 +52,12 @@ button {
     cursor: pointer;
 }
 
+.detailberechnung{
+    width: 10vw;
+    display: block;
+    margin: 0 auto;
+}
+
 button:hover {
     background-color: #005f99;
 }

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-basic-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './basic-form.component.html',
   styleUrl: './basic-form.component.css'
 })
@@ -32,6 +33,10 @@ export class BasicFormComponent {
       this.empfehlung = "Diese Immobilie ist für diesen Preis nicht zu empfehlen"
     }
     
+  }
+
+  openDetailberechnung(){
+    this.kaufpreis = 90000;
   }
 
 }
