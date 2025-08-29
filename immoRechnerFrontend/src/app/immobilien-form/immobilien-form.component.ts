@@ -23,7 +23,7 @@ export class ImmobilienFormComponent {
   kaltmiete: number = 400;
   ruecklagen: number = 1000
   gebaudeanteil: number = 80;
-  grundstuecksanteil: number = 100 - this.gebaudeanteil;
+  grundstuecksanteil: number = 20;
   isErbpacht: boolean = false;
   eingangsbereich: string = "";
   haustuer: string = "" ;
@@ -37,10 +37,10 @@ export class ImmobilienFormComponent {
   dachErneuern: boolean = false;
   garageVorhanden: boolean = false;
   stellplatzVorhanden: boolean = false;
+  artDerHeizung: string = "gas";
   mietrendite: number = Math.round((this.kaltmiete*12*100/this.kaufpreis)*100)/100;
   ueberschuss: number = Math.round((this.kaltmiete-this.kaufpreis/100*5/12-this.nebenkostenNU)*100)/100;
   empfehlung: String = "Diese Immobilie ist für diesen Preis nicht zu Empfehlen";
-
 
   onSubmit() {
 

@@ -75,14 +75,8 @@
 
         <div class="form-group">
             <label for="gebaudeanteil">Gebäudeanteil (%)</label>
-            <input type="number" [(ngModel)]="gebaudeanteil" name="gebaudeanteil">
+            <input type="number" [(ngModel)]="gebaudeanteil" name="gebaudeanteila">
             <input type="range" [(ngModel)]="gebaudeanteil" name="gebaudeanteil">
-        </div>
-
-        <div class="form-group">
-            <label for="grundstuecksanteil">Grundstücksanteil (%)</label>
-            <input type="number" [(ngModel)]="grundstuecksanteil" name="grundstuecksanteil">
-            <input type="range" [(ngModel)]="grundstuecksanteil" name="grundstuecksanteil">
         </div>
 
         <div class="form-group">
@@ -138,31 +132,31 @@
 
         <div class="form-group">
             <label for="">
-                <input type="radio" [(ngModel)]="alterDerHeizung"value="gas" name="heizungsTyp"> 
+                <input type="radio" [(ngModel)]="artDerHeizung"value="gas" name="heizungsTyp"> 
                 Gas
             </label>
             <label for="">
-                <input type="radio" [(ngModel)]="alterDerHeizung"value="oel" name="heizungsTyp"> 
+                <input type="radio" [(ngModel)]="artDerHeizung"value="oel" name="heizungsTyp"> 
                 Öl
             </label>
             <label for="">
-                <input type="radio" [(ngModel)]="alterDerHeizung"value="waermepumpe" name="heizungsTyp"> 
+                <input type="radio" [(ngModel)]="artDerHeizung"value="waermepumpe" name="heizungsTyp"> 
                 Wärmepumpe
             </label>
             <label for="">
-                <input type="radio" [(ngModel)]="alterDerHeizung"value="fernwaerme" name="heizungsTyp"> 
+                <input type="radio" [(ngModel)]="artDerHeizung"value="fernwaerme" name="heizungsTyp"> 
                 Fernwärme
             </label>
             <label for="">
-                <input type="radio" [(ngModel)]="alterDerHeizung"value="holz" name="heizungsTyp"> 
+                <input type="radio" [(ngModel)]="artDerHeizung"value="holz" name="heizungsTyp"> 
                 Holz
             </label>
             <label for="">
-                <input type="radio" [(ngModel)]="alterDerHeizung"value="elektro" name="heizungsTyp"> 
+                <input type="radio" [(ngModel)]="artDerHeizung"value="elektro" name="heizungsTyp"> 
                 Elektro
             </label>
             <label for="">
-                <input type="radio" [(ngModel)]="alterDerHeizung" value="andere" name="heizungsTyp"> 
+                <input type="radio" [(ngModel)]="artDerHeizung" value="andere" name="heizungsTyp"> 
                 Andere
             </label>
         </div>
