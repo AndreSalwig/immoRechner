@@ -1,6 +1,6 @@
 .formContainer{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     align-items: start;
     justify-content: center;
     padding: 2vw;
@@ -9,8 +9,7 @@
 h2{
 margin-left: 2vw;
 background-color: #f9f9f9aa;
-display: block;
-width: max-content;
+display: inline-block;
 padding: 1vw;
 border-radius: 2rem;
 }
@@ -44,20 +43,23 @@ border-radius: 2rem;
 button {
     width: 100%;
     padding: 0.8rem;
-    border: none;
     border-radius: 8px;
-    background-color: #007acc;
-    color: white;
+    background-color: #E6D8AD;
+    color: black;
     font-size: 1rem;
     cursor: pointer;
 }
 
 .detailberechnung{
-    width: 10vw;
-    display: block;
+    width: auto;
+    display: inline-block;
     margin: 0 auto;
 }
 
+.mittig{
+    text-align: center;
+}
+
 button:hover {
-    background-color: #005f99;
+    background-color: #D2C086;
 }

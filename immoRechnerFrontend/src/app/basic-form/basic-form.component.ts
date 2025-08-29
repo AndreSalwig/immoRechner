@@ -17,7 +17,7 @@ export class BasicFormComponent {
   kaltmiete: number = 400;
   mietrendite: number = Math.round((this.kaltmiete*12*100/this.kaufpreis)*100)/100;
   ueberschuss: number = Math.round((this.kaltmiete-this.kaufpreis/100*5/12-this.nebenkostenNU)*100)/100;
-  empfehlung: String = "Diese Immobilie ist für diesen Preis nicht zu Empfehlen";
+  empfehlung: String = "Diese Immobilie ist für diesen Preis nicht zu empfehlen";
 
 
   onSubmit() {
