@@ -19,6 +19,31 @@
         </div>
 
         <div class="form-group">
+            <label for="kaufnebenkosten">Kaufnebenkosten (€)</label>
+            <input type="number" [(ngModel)]="kaufnebenkosten" id="kaufnebenkosten" name="kaufnebenkosten" required>
+        </div>
+
+        <div class="form-group">
+            <label for="eigenkapital">Eigenkapital (€)</label>
+            <input type="number" [(ngModel)]="eigenkapital" id="eigenkapital" name="eigenkapital" required>
+        </div>
+
+        <div class="form-group">
+            <label for="kreditbetrag">Kreditbetrag (€)</label>
+            <input type="number" [(ngModel)]="kreditbetrag" id="kreditbetrag" name="kreditbetrag" required>
+        </div>
+
+        <div class="form-group">
+            <label for="zinssatz">Zinssatz (%)</label>
+            <input type="number" [(ngModel)]="zinssatz" id="zinssatz" name="zinssatz" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tilgung">Tilgung (%)</label>
+            <input type="number" [(ngModel)]="tilgung" id="tilgung" name="tilgung" required>
+        </div>
+
+        <div class="form-group">
             <label for="wohnflaeche">Wohnfläche (m²)</label>
             <input type="number" [(ngModel)]="wohnflaeche" id="wohnflaeche" name="wohnflaeche" required>
         </div>
@@ -28,7 +53,7 @@
             <input type="number" [(ngModel)]="nebenkostenU" id="nebenkostenU" name="nebenkostenU">
         </div>
 
-        <div class="form-group" *ngIf="selectedImmoArt === 'wohnung'">
+        <div class="form-group">
             <label for="nebenkostenNU">Nebenkosten nicht umlagefähig (€)</label>
             <input type="number" [(ngModel)]="nebenkostenNU" id="nebenkostenNU" name="nebenkostenNU">
         </div>
@@ -36,6 +61,146 @@
         <div class="form-group">
             <label for="kaltmiete">Ist-Kaltmiete (€)</label>
             <input type="number" [(ngModel)]="kaltmiete" id="kaltmiete" name="kaltmiete">
+        </div>
+
+        <div class="form-group" *ngIf="selectedImmoArt === 'mehrfamilienhaus'">
+            <label for="kaltmiete">Anzahl Wohnungen</label>
+            <input type="number" [(ngModel)]="kaltmiete" id="kaltmiete" name="kaltmiete">
+        </div>
+
+        <div class="form-group">
+            <label for="ruecklagen">Rücklagen (€)</label>
+            <input type="number" [(ngModel)]="ruecklagen" id="ruecklagen" name="ruecklagen">
+        </div>
+
+        <div class="form-group">
+            <label for="gebaudeanteil">Gebäudeanteil (%)</label>
+            <input type="number" [(ngModel)]="gebaudeanteil" name="gebaudeanteil">
+            <input type="range" [(ngModel)]="gebaudeanteil" name="gebaudeanteil">
+        </div>
+
+        <div class="form-group">
+            <label for="grundstuecksanteil">Grundstücksanteil (%)</label>
+            <input type="number" [(ngModel)]="grundstuecksanteil" name="grundstuecksanteil">
+            <input type="range" [(ngModel)]="grundstuecksanteil" name="grundstuecksanteil">
+        </div>
+
+        <div class="form-group">
+            <label for="erbpacht">
+            Erbpacht <input [(ngModel)]="isErbpacht" type="checkbox" name="erbpacht" required>
+            </label>
+        </div>
+
+        <div class="form-group" *ngIf="isErbpacht">
+            <label for="kaltmiete">Erbzins pro Jahr</label>
+            <input type="number" [(ngModel)]="kaltmiete" id="kaltmiete" name="kaltmiete">
+        </div>
+
+        <h3>Zustand der Gesamtimmobilie</h3>
+
+        <div class="form-group">
+            <label for="eingangsbereich">Eingangsbereich</label>
+            <input type="text" [(ngModel)]="eingangsbereich" id="eingangsbereich" name="eingangsbereich"
+                    placeholder="Wie ist der Zustand des Eingangsbereichs?">
+        </div>
+
+        <div class="form-group">
+            <label for="haustuer">Haustür</label>
+            <input type="text" [(ngModel)]="haustuer" id="haustuer" name="haustuer" 
+                    placeholder="Wie ist der Zustand der Haustür?">
+        </div>
+
+        <div class="form-group">
+            <label for="fassade">Fassade</label>
+            <input type="text" [(ngModel)]="fassade" id="fassade" name="fassade"
+                    placeholder="Wie ist der Zustand der Fassade?">
+        </div>
+
+        <div class="form-group">
+            <label for="vorgarten">Vorgarten</label>
+            <input type="text" [(ngModel)]="vorgarten" id="vorgarten" name="vorgarten"
+                    placeholder="Wie ist der Zustand des Vorgartens?">
+        </div>
+
+        <div class="form-group">
+            <label for="treppenhaus">Treppenhaus</label>
+            <input type="text" [(ngModel)]="treppenhaus" id="treppenhaus" name="treppenhaus"
+                    placeholder="Wie ist der Zustand des Treppenhauses?">
+        </div>
+
+        <div class="form-group">
+            <label for="keller">Keller</label>
+            <input type="text" [(ngModel)]="keller" id="keller" name="keller"
+                    placeholder="Wie ist der Zustand des Kellers?">
+        </div>
+
+        <h3>Heizung</h3>
+
+        <div class="form-group">
+            <label for="">
+                <input type="radio" [(ngModel)]="alterDerHeizung"value="gas" name="heizungsTyp"> 
+                Gas
+            </label>
+            <label for="">
+                <input type="radio" [(ngModel)]="alterDerHeizung"value="oel" name="heizungsTyp"> 
+                Öl
+            </label>
+            <label for="">
+                <input type="radio" [(ngModel)]="alterDerHeizung"value="waermepumpe" name="heizungsTyp"> 
+                Wärmepumpe
+            </label>
+            <label for="">
+                <input type="radio" [(ngModel)]="alterDerHeizung"value="fernwaerme" name="heizungsTyp"> 
+                Fernwärme
+            </label>
+            <label for="">
+                <input type="radio" [(ngModel)]="alterDerHeizung"value="holz" name="heizungsTyp"> 
+                Holz
+            </label>
+            <label for="">
+                <input type="radio" [(ngModel)]="alterDerHeizung"value="elektro" name="heizungsTyp"> 
+                Elektro
+            </label>
+            <label for="">
+                <input type="radio" [(ngModel)]="alterDerHeizung" value="andere" name="heizungsTyp"> 
+                Andere
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="heizungsAlter">Alter der Heizung</label>
+            <input type="number" [(ngModel)]="alterDerHeizung" id="alterDerHeizung" name="alterDerHeizung">
+        </div>
+
+        <div class="form-group">
+            <label for="heizungErneuern">Heizung erneuern ?
+                <input type="checkbox" [(ngModel)]="heizungErneuern" id="heizungErneuern" name="heizungErneuern">
+            </label>
+        </div>
+
+        <h3>Dach</h3>
+
+         <div class="form-group">
+            <label for="dachAlter">Alter des Dachs</label>
+            <input type="number" [(ngModel)]="dachAlter" id="dachAlter" name="dachAlter">
+        </div>
+
+        <div class="form-group">
+            <label for="dachErneuern">Dach erneuern ?
+                <input type="checkbox" [(ngModel)]="dachErneuern" id="dachErneuern" name="dachErneuern">
+            </label>
+        </div>
+
+         <div class="form-group">
+            <label for="garageVorhanden">Ist eine Garage mit dabei?
+                <input type="checkbox" [(ngModel)]="garageVorhanden" id="garageVorhanden" name="garageVorhanden">
+            </label>
+        </div>
+
+         <div class="form-group">
+            <label for="stellplatzVorhanden">Ist ein Stellplatz mit dabei?
+                <input type="checkbox" [(ngModel)]="stellplatzVorhanden" id="stellplatzVorhanden" name="stellplatzVorhanden">
+            </label>
         </div>
 
         <button type="submit">Berechnen</button>
