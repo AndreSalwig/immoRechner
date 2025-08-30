@@ -35,14 +35,13 @@
 button {
     width: 100%;
     padding: 0.8rem;
-    border: none;
     border-radius: 8px;
-    background-color: #007acc;
-    color: white;
+    background-color: #E6D8AD;
+    color: black;
     font-size: 1rem;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #005f99;
+    background-color: #D2C086;
 }
