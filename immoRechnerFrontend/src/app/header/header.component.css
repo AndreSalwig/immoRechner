@@ -12,12 +12,13 @@ h1{
 }
 
 .burger-btn {
+  position: fixed;
   font-size: 24px;
   padding: 10px 15px;
   cursor: pointer;
-  position: relative;
   z-index: 1001;
   background: #E6D8AD;
+  right: 2vw;
 }
 
 .burger-btn:hover{
