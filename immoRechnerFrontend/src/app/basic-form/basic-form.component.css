@@ -1,6 +1,5 @@
 .formContainer{
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
     align-items: start;
     justify-content: center;
     padding: 2vw;

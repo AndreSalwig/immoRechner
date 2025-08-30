@@ -11,6 +11,47 @@ h1{
     cursor: default;
 }
 
-button{
-    cursor: pointer;
+.burger-btn {
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
+  background: #E6D8AD;
+}
+
+.burger-btn:hover{
+ background:  #D2C086;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* versteckt */
+  width: 250px;
+  height: 100%;
+  background: #E6D8AD;
+  color: white;
+  transition: left 0.3s ease;
+  padding-top: 10vh;
+  z-index: 1000;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li {
+  margin: 20px;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu.active {
+  right: 0; /* sichtbar */
 }
