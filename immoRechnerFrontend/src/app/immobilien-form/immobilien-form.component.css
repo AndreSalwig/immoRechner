@@ -1,17 +1,9 @@
 .formContainer{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto auto;
     align-items: start;
     justify-content: center;
     padding: 2vw;
-}
-
-h2{
-margin-left: 2vw;
-background-color: #f9f9f9aa;
-display: inline-block;
-padding: 1vw;
-border-radius: 2rem;
 }
 
 .immo-form {
@@ -48,16 +40,6 @@ button {
     color: black;
     font-size: 1rem;
     cursor: pointer;
-}
-
-.detailberechnung{
-    width: auto;
-    display: inline-block;
-    margin: 0 auto;
-}
-
-.mittig{
-    text-align: center;
 }
 
 button:hover {

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-basic-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './basic-form.component.html',
   styleUrl: './basic-form.component.css'
 })
@@ -16,7 +17,7 @@ export class BasicFormComponent {
   kaltmiete: number = 400;
   mietrendite: number = Math.round((this.kaltmiete*12*100/this.kaufpreis)*100)/100;
   ueberschuss: number = Math.round((this.kaltmiete-this.kaufpreis/100*5/12-this.nebenkostenNU)*100)/100;
-  empfehlung: String = "Diese Immobilie ist für diesen Preis nicht zu Empfehlen";
+  empfehlung: String = "Diese Immobilie ist für diesen Preis nicht zu empfehlen";
 
 
   onSubmit() {
@@ -32,6 +33,10 @@ export class BasicFormComponent {
       this.empfehlung = "Diese Immobilie ist für diesen Preis nicht zu empfehlen"
     }
     
+  }
+
+  openDetailberechnung(){
+    this.kaufpreis = 90000;
   }
 
 }

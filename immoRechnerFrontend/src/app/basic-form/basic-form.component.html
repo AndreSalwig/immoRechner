@@ -28,5 +28,12 @@
         <button type="submit">Berechnen</button>
     </form>
 
-    <h2>Aus den oberen Daten ergibt sich folgende Bewertung: <br> Miterendite: {{mietrendite}}% <br> Überschuss: {{ueberschuss}}€ pro Monat <br> {{empfehlung}} </h2>
+    <div>
+        <h2>Aus den oberen Daten ergibt sich folgende Bewertung: <br> Miterendite: {{mietrendite}}% <br> Überschuss: {{ueberschuss}}€ pro Monat <br> {{empfehlung}} 
+        </h2>
+
+        <div class="mittig">
+            <button routerLink="/detailseite" class="detailberechnung">Detailberechnung</button>
+        </div>
+    </div>
 </div>
