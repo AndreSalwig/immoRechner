@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
+  standalone: true,
     selector: 'app-basic-form',
     imports: [FormsModule, RouterLink],
     templateUrl: './basic-form.component.html',

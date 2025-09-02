@@ -5,6 +5,7 @@ import {Chart, registerables} from 'chart.js'
 Chart.register(...registerables);
 
 @Component({
+  standalone: true,
     selector: 'app-ist-soll-vergleich',
     imports: [FormsModule],
     templateUrl: './ist-soll-vergleich.component.html',
