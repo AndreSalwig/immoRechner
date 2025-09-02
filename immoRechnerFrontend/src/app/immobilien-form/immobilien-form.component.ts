@@ -1,13 +1,13 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-immobilien-form',
   standalone: true,
-  imports: [FormsModule, CommonModule],
-  templateUrl: './immobilien-form.component.html',
-  styleUrl: './immobilien-form.component.css'
+    selector: 'app-immobilien-form',
+    imports: [FormsModule],
+    templateUrl: './immobilien-form.component.html',
+    styleUrl: './immobilien-form.component.css'
 })
 export class ImmobilienFormComponent {
   selectedImmoArt: string = "wohnung";

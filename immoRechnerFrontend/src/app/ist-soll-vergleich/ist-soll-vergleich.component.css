@@ -5,17 +5,8 @@
     padding: 2vw;
 }
 
-h2{
-margin-left: 2vw;
-background-color: #f9f9f9aa;
-display: inline-block;
-padding: 1vw;
-border-radius: 2rem;
-}
-
 .immo-form {
     width: 500px;
-    margin-right: 2vw;
     padding: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 12px;
@@ -39,6 +30,21 @@ border-radius: 2rem;
     border-radius: 6px;
 }
 
+.auswertung{
+    height: 100vh;
+}
+
+.chart-container{
+    display: flex;
+    justify-content: center;
+}
+
+.chart{
+width: 40vw;
+height: 50vh;
+background-color: #f9f9f9aa;
+}
+
 button {
     width: 100%;
     padding: 0.8rem;
@@ -47,16 +53,6 @@ button {
     color: black;
     font-size: 1rem;
     cursor: pointer;
-}
-
-.detailberechnung{
-    width: auto;
-    display: inline-block;
-    margin: 0 auto;
-}
-
-.mittig{
-    text-align: center;
 }
 
 button:hover {

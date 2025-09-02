@@ -3,11 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-basic-form',
   standalone: true,
-  imports: [FormsModule, RouterLink],
-  templateUrl: './basic-form.component.html',
-  styleUrl: './basic-form.component.css'
+    selector: 'app-basic-form',
+    imports: [FormsModule, RouterLink],
+    templateUrl: './basic-form.component.html',
+    styleUrl: './basic-form.component.css'
 })
 export class BasicFormComponent {
   kaufpreis: number = 100000;
