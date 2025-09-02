@@ -34,6 +34,17 @@
     height: 100vh;
 }
 
+.chart-container{
+    display: flex;
+    justify-content: center;
+}
+
+.chart{
+width: 40vw;
+height: 50vh;
+background-color: #f9f9f9aa;
+}
+
 button {
     width: 100%;
     padding: 0.8rem;

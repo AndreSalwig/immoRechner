@@ -69,14 +69,11 @@
     </form>
 </div>
 
-<div class="auswertung">
-    <h1>Testdaten</h1>
-    <div>
-        <p>Ist Zustand : {{istEinnahmen}} - {{istAusgaben}} bei einer Rendite von {{istRendite}}</p>
-        <p>Soll Zustand : {{sollEinnahmen}} - {{sollAusgaben}} bei einer Rendite von {{sollRendite}}</p>
-    </div>
-</div>
-
 <div class="chart-container">
-    <canvas id="MyChart">{{chart}}</canvas>
+    <div class="chart">
+        <canvas id="KostenChart">{{kostenChart}}</canvas>
+    </div>
+    <div class="chart">
+        <canvas id="RenditeChart">{{renditeChart}}</canvas>
+    </div>
 </div>

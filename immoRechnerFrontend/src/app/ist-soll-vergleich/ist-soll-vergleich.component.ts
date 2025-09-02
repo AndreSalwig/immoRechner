@@ -12,6 +12,10 @@ Chart.register(...registerables);
     styleUrl: './ist-soll-vergleich.component.css'
 })
 export class IstSollVergleichComponent implements OnInit {
+
+  kostenChart: any;
+  renditeChart: any;
+
   istKaufpreis: number = 100000;
   istNebenkostenNU: number = 150;
   istKaltmiete: number = 400;
@@ -24,35 +28,46 @@ export class IstSollVergleichComponent implements OnInit {
   sollEigenkapital: number = 13500;
   zinssatz: number = 3.5;
   tilgung: number = 1.5;
-
   istEinnahmen: number = this.istKaltmiete;
   istAusgaben: number = Math.round(((this.istKaufpreis*1.12-this.istEigenkapital)/100*(this.zinssatz+this.tilgung))/12*100)/100;
   istRendite: number = Math.round(this.istKaltmiete*12/this.istKaufpreis*100*100)/100;
   sollEinnahmen: number = this.sollKaltmiete;
   sollAusgaben: number = Math.round(((this.sollKaufpreis*1.12-this.sollEigenkapital)/100*(this.zinssatz+this.tilgung))/12*100)/100;
   sollRendite: number = Math.round(this.sollKaltmiete*12/this.sollKaufpreis*100*100)/100;
+  istUeberschuss: number = this.istKaltmiete-this.istAusgaben;
+  sollUeberschuss: number = this.sollKaltmiete-this.sollAusgaben;
+
+
 
   onSubmit(){
     this.istAusgaben = Math.round(((this.istKaufpreis*1.12-this.istEigenkapital)/100*(this.zinssatz+this.tilgung))/12*100)/100;
     this.istRendite = Math.round(this.istKaltmiete*12/this.istKaufpreis*100*100)/100;
     this.sollAusgaben = Math.round(((this.sollKaufpreis*1.12-this.istEigenkapital)/100*(this.zinssatz+this.tilgung))/12*100)/100;
     this.sollRendite = Math.round(this.sollKaltmiete*12/this.sollKaufpreis*100*100)/100;
+    this.istUeberschuss = this.istKaltmiete-this.istAusgaben;
+    this.sollUeberschuss =this.sollKaltmiete-this.sollAusgaben;
+    this.buildCharts();
   }
 
-  config: any = {
+  buildCharts(){
+    this.kostenChart = new Chart('KostenChart', this.configKostenChart)  
+    this.renditeChart = new Chart('RenditeChart', this.configRenditeChart) 
+  }
+
+  configKostenChart: any = {
     type: 'bar',
     data:{
-      labels:['Kaltmiete', 'Kreditkosten', 'Rendite'],
+      labels:['Kaltmiete', 'Kreditkosten', 'Überschuss'],
       datasets:[
         {
           label: 'Ist',
-          data: [this.istKaltmiete, this.istAusgaben, this.istRendite],
-          backgroudColor: 'orange',
+          data: [this.istKaltmiete, this.istAusgaben, this.istUeberschuss ],
+          backgroundColor: 'orange',
         },
         {
           label: 'Soll',
-          data: [this.sollKaltmiete, this.sollAusgaben, this.sollRendite],
-          backgroudColor: 'green',
+          data: [this.sollKaltmiete, this.sollAusgaben, this.sollUeberschuss],
+          backgroundColor: 'green',
         },
       ],
     },
@@ -61,9 +76,31 @@ export class IstSollVergleichComponent implements OnInit {
     },
   };
 
-  chart: any;
+
+  configRenditeChart: any = {
+    type: 'bar',
+    data:{
+      labels:['Rendite'],
+      datasets:[
+        {
+          label: 'Ist',
+          data: [this.istRendite],
+          backgroundColor: 'orange',
+        },
+        {
+          label: 'Soll',
+          data: [this.sollRendite],
+          backgroundColor: 'green',
+        },
+      ],
+    },
+    options:{
+      aspectRatio: 1,
+    },
+  };
+
   ngOnInit(): void {
-    this.chart = new Chart('MyChart', this.config)
+    this.buildCharts();
   }
 
 }
