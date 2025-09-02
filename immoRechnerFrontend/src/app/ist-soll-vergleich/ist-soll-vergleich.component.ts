@@ -1,5 +1,8 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+import {Chart, registerables} from 'chart.js'
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-ist-soll-vergleich',
@@ -8,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './ist-soll-vergleich.component.html',
   styleUrl: './ist-soll-vergleich.component.css'
 })
-export class IstSollVergleichComponent {
+export class IstSollVergleichComponent implements OnInit {
   istKaufpreis: number = 100000;
   istNebenkostenNU: number = 150;
   istKaltmiete: number = 400;
@@ -34,6 +37,33 @@ export class IstSollVergleichComponent {
     this.istRendite = Math.round(this.istKaltmiete*12/this.istKaufpreis*100*100)/100;
     this.sollAusgaben = Math.round(((this.sollKaufpreis*1.12-this.istEigenkapital)/100*(this.zinssatz+this.tilgung))/12*100)/100;
     this.sollRendite = Math.round(this.sollKaltmiete*12/this.sollKaufpreis*100*100)/100;
+  }
+
+  config: any = {
+    type: 'bar',
+    data:{
+      labels:['Kaltmiete', 'Kreditkosten', 'Rendite'],
+      datasets:[
+        {
+          label: 'Ist',
+          data: [this.istKaltmiete, this.istAusgaben, this.istRendite],
+          backgroudColor: 'orange',
+        },
+        {
+          label: 'Soll',
+          data: [this.sollKaltmiete, this.sollAusgaben, this.sollRendite],
+          backgroudColor: 'green',
+        },
+      ],
+    },
+    options:{
+      aspectRatio: 1,
+    },
+  };
+
+  chart: any;
+  ngOnInit(): void {
+    this.chart = new Chart('MyChart', this.config)
   }
 
 }
