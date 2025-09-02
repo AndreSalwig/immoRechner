@@ -1,9 +1,32 @@
 <div class="formContainer">
     <form (ngSubmit)="onSubmit()" class="immo-form">
+
+        <h3>Kreditangaben</h3>
+        <div class="form-group">
+            <label for="zinssatz">Zinssatz</label>
+            <input type="number" [(ngModel)]="zinssatz" id="zinssatz" name="zinssatz">
+        </div>
+
+        <div class="form-group">
+            <label for="tilgung">Tilgung</label>
+            <input type="number" [(ngModel)]="tilgung" id="tilgung" name="tilgung">
+        </div>
+
+
         <h3>Ist Zustand</h3>
         <div class="form-group">
             <label for="istKaufpreis">Kaufpreis (€)</label>
             <input type="number" [(ngModel)]="istKaufpreis" id="istKaufpreis" name="istKaufpreis" required>
+        </div>
+
+         <div class="form-group">
+            <label for="istKreditsumme">Kreditsumme (€)</label>
+            <input type="number" [(ngModel)]="istKreditsumme" id="istKreditsumme" name="istKreditsumme" required>
+        </div>
+
+         <div class="form-group">
+            <label for="istEigenkapital">Eigenkapital incl. Kaufnebenkosten</label>
+            <input type="number" [(ngModel)]="istEigenkapital" id="istEigenkapital" name="istEigenkapital">
         </div>
 
         <div class="form-group">
@@ -22,6 +45,16 @@
             <input type="number" [(ngModel)]="sollKaufpreis" id="sollKaufpreis" name="sollKaufpreis" required>
         </div>
 
+         <div class="form-group">
+            <label for="sollKreditsumme">Kreditsumme (€)</label>
+            <input type="number" [(ngModel)]="sollKreditsumme" id="sollKreditsumme" name="sollKreditsumme" required>
+        </div>
+
+         <div class="form-group">
+            <label for="sollEigenkapital">Eigenkapital incl. Kaufnebenkosten</label>
+            <input type="number" [(ngModel)]="sollEigenkapital" id="sollEigenkapital" name="sollEigenkapital">
+        </div>
+
         <div class="form-group">
             <label for="sollNebenkostenNU">Nebenkosten nicht umlagefähig (€)</label>
             <input type="number" [(ngModel)]="sollNebenkostenNU" id="sollNebenkostenNU" name="sollNebenkostenNU">
@@ -34,4 +67,12 @@
 
         <button type="submit">Berechnen</button>
     </form>
+</div>
+
+<div class="auswertung">
+    <h1>Testdaten</h1>
+    <div>
+        <p>Ist Zustand : {{istEinnahmen}} - {{istAusgaben}} bei einer Rendite von {{istRendite}}</p>
+        <p>Soll Zustand : {{sollEinnahmen}} - {{sollAusgaben}} bei einer Rendite von {{sollRendite}}</p>
+    </div>
 </div>
