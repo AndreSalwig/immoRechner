@@ -5,11 +5,10 @@ import {Chart, registerables} from 'chart.js'
 Chart.register(...registerables);
 
 @Component({
-  selector: 'app-ist-soll-vergleich',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './ist-soll-vergleich.component.html',
-  styleUrl: './ist-soll-vergleich.component.css'
+    selector: 'app-ist-soll-vergleich',
+    imports: [FormsModule],
+    templateUrl: './ist-soll-vergleich.component.html',
+    styleUrl: './ist-soll-vergleich.component.css'
 })
 export class IstSollVergleichComponent implements OnInit {
   istKaufpreis: number = 100000;
