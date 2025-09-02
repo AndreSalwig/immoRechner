@@ -22,9 +22,7 @@ export class IstSollVergleichComponent implements OnInit {
   sollKaufpreis: number = 90000;
   sollNebenkostenNU: number = 150;
   sollKaltmiete: number = 500;
-  istKreditsumme: number = 100000;
   istEigenkapital: number = 15000;
-  sollKreditsumme: number = 90000;
   sollEigenkapital: number = 13500;
   zinssatz: number = 3.5;
   tilgung: number = 1.5;
@@ -46,7 +44,17 @@ export class IstSollVergleichComponent implements OnInit {
     this.sollRendite = Math.round(this.sollKaltmiete*12/this.sollKaufpreis*100*100)/100;
     this.istUeberschuss = this.istKaltmiete-this.istAusgaben;
     this.sollUeberschuss =this.sollKaltmiete-this.sollAusgaben;
-    this.buildCharts();
+    if (this.kostenChart) {
+      this.kostenChart.data.datasets[0].data = [this.istKaltmiete, this.istAusgaben, this.istUeberschuss];
+      this.kostenChart.data.datasets[1].data = [this.sollKaltmiete, this.sollAusgaben, this.sollUeberschuss];
+      this.kostenChart.update();
+    }
+    if (this.renditeChart) {
+    this.renditeChart.data.datasets[0].data = [this.istRendite];
+    this.renditeChart.data.datasets[1].data = [this.sollRendite];
+    this.renditeChart.update();
+  }
+
   }
 
   buildCharts(){
